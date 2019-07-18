@@ -1,10 +1,10 @@
 var mysql = require('mysql'); 
 
 var con = mysql.createConnection({
-    host: "127.0.0.1",
+    host: "mysql.engie.the-machine.xyz",
     port: 3306,
-    user: "root",
-    password: "",
+    user: "lidar",
+    password: "IiGdt4sEPZS6609y",
     database: "lidar"
   });
   
