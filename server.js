@@ -11,10 +11,11 @@ app.set('view engine', 'ejs');
 app.set('views', __dirname);
 
 var connection = mysql.createConnection({
-    host: "127.0.0.1",
+    host: "164.132.110.43",
+    //host: "https://mysql.engie.the-machine.xyz",
     port: 3306,
-    user: "root",
-    password: "",
+    user: "lidar",
+    password: "IiGdt4sEPZS6609y",
     database: "lidar"
 });
 
