@@ -21,15 +21,16 @@ function processTrackEvents(result){
     for (var i = 0; i < trackEvents.length; i++){
         var newTrackEvents = result.filter(event => event.track == trackEvents[i]);
         var zonesArray = newTrackEvents.map(function (el) { return el.zone; });
-        var inZonesArray = zonesArray.filter(zone => zone == "meeting_in");
-        var outZonesArray = zonesArray.filter(zone => zone == "meeting_out");
-
-        if(inZonesArray.length > outZonesArray.length){
-            count.inZone++;
-        } else if(inZonesArray.length == outZonesArray.length){
-            count.outZone++;
-        } else {
-            count.bugged++;
+        var inZonesArray = zonesArray.filter(zone => zone == "openspace_in");
+        var outZonesArray = zonesArray.filter(zone => zone == "openspace_out");
+        if(inZonesArray.length != 0 || outZonesArray.length != 0){
+            if(inZonesArray.length > outZonesArray.length){
+                count.inZone++;
+            } else if(inZonesArray.length == outZonesArray.length){
+                count.outZone++;
+            } else {
+                count.bugged++;
+            }
         }
     }
     count.inZone = count.inZone.toString();
